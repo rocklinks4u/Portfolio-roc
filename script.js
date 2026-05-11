@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', init);
 
 function init() {
     const txtElement = document.querySelector('.typing-effect');
-    const words = ['Web Developer | Mobile App Developer | System Designer | Graphic Designer'];
-    const wait = 3000;
+    const words = ['Frontend Developer', 'Web Designer', 'Creative Technologist'];
+    const wait = 2800;
     new TypeWriter(txtElement, words, wait);
 
     // Navbar scroll effect

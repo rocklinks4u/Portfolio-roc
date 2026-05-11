@@ -97,63 +97,73 @@ html, body {
 
 /* ===== HERO BUTTON STYLES ===== */
 
-.hero-btn-primary {
+.hero-btn-primary,
+.hero-btn-secondary {
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    padding: 0 1.9rem;
+    border-radius: 999px;
+    font-family: var(--font-poppins);
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease, color 0.35s ease;
+    will-change: transform, box-shadow;
+}
+
+.hero-btn-primary {
     overflow: hidden;
     background-color: var(--color-primary) !important;
     color: white !important;
     border: none;
-    font-family: var(--font-poppins);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 20px 40px rgba(139, 42, 79, 0.14);
 }
 
 .hero-btn-primary::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 100%;
+    left: -120%;
+    width: 120%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s;
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.35) 40%, transparent 80%);
+    transform: skewX(-20deg);
+    transition: left 0.55s ease;
 }
 
 .hero-btn-primary:hover {
-    background-color: #7E2749 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(139, 42, 79, 0.3) !important;
+    background-color: #9E3361 !important;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 26px 55px rgba(139, 42, 79, 0.18) !important;
 }
 
 .hero-btn-primary:hover::before {
     left: 100%;
 }
 
-.hero-btn-primary:active {
-    transform: translateY(0);
+.hero-btn-primary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(139, 42, 79, 0.18);
 }
 
-.hero-btn-primary svg {
+.hero-btn-primary svg,
+.hero-btn-secondary svg {
     transition: transform 0.3s ease;
 }
 
-.hero-btn-primary:hover svg {
-    transform: translateX(3px);
+.hero-btn-primary:hover svg,
+.hero-btn-secondary:hover svg {
+    transform: translateX(4px);
 }
 
-/* Secondary button (Contact Me) */
 .hero-btn-secondary {
-    position: relative;
     overflow: hidden;
     background-color: white !important;
-    border-color: var(--color-primary) !important;
-    border-width: 2px;
+    border: 2px solid var(--color-primary) !important;
     color: var(--color-primary) !important;
-    font-family: var(--font-poppins);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 18px 36px rgba(139, 42, 79, 0.08);
 }
 
 .hero-btn-secondary::before {
@@ -165,39 +175,68 @@ html, body {
     height: 100%;
     background-color: var(--color-primary);
     z-index: -1;
-    transition: left 0.3s;
+    transition: left 0.35s ease;
 }
 
 .hero-btn-secondary:hover {
     color: white !important;
-    border-color: var(--color-primary) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(255, 1, 79, 0.25) !important;
+    border-color: transparent !important;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 26px 55px rgba(139, 42, 79, 0.16) !important;
 }
 
 .hero-btn-secondary:hover::before {
     left: 0;
 }
 
-.hero-btn-secondary:active {
-    transform: translateY(0);
+.hero-btn-secondary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(139, 42, 79, 0.14);
 }
 
-.hero-btn-secondary svg {
+.hero-btn-download {
+    overflow: hidden;
+    background-color: #FF014F !important;
+    color: white !important;
+    border: none;
+    box-shadow: 0 18px 36px rgba(255, 1, 79, 0.22);
+}
+
+.hero-btn-download:hover {
+    background-color: #e60043 !important;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 26px 55px rgba(255, 1, 79, 0.28);
+}
+
+.hero-btn-download:active {
+    transform: translateY(0) scale(1);
+}
+
+.hero-btn-download svg {
     transition: transform 0.3s ease;
 }
 
-.hero-btn-secondary:hover svg {
-    transform: translateX(3px);
+.hero-btn-primary:hover svg,
+.hero-btn-secondary:hover svg,
+.hero-btn-download:hover svg {
+    transform: translateX(4px);
+}
+
+.hero-btn-primary:active,
+.hero-btn-secondary:active,
+.hero-btn-download:active {
+    transform: translateY(0) scale(1);
 }
 
 /* ===== RESPONSIVE BUTTON SIZING ===== */
 
 @media (max-width: 640px) {
     .hero-btn-primary,
-    .hero-btn-secondary {
+    .hero-btn-secondary,
+    .hero-btn-download {
         width: 100%;
-        padding: 0.875rem 1.5rem !important;
+        max-width: 100%;
+        padding: 0.95rem 1.4rem !important;
     }
 }
 
@@ -209,24 +248,61 @@ html, body {
     max-width: 500px;
     overflow: hidden;
     border-radius: 30px;
-    transition: all 0.3s ease;
-    box-shadow: 0 24px 60px rgba(60, 62, 65, 0.16);
-    background: transparent;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 26px 60px rgba(139, 42, 79, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+    animation: float 6s ease-in-out infinite;
 }
 
 .hero-image-container:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 30px 70px rgba(60, 62, 65, 0.2);
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 34px 80px rgba(139, 42, 79, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.hero-image-container::before,
+.hero-image-container::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-image-container::before {
+    bottom: -18px;
+    width: 92%;
+    height: 80px;
+    background: rgba(139, 42, 79, 0.08);
+    filter: blur(24px);
+}
+
+.hero-image-container::after {
+    top: 16px;
+    width: 86%;
+    height: 86%;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .hero-image {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 30px;
+    border-radius: 28px;
     transition: transform 0.4s ease;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+}
+
+.hero-image-container::marker {
+    content: none;
+}
+
+.hero-image-container .hero-image {
+    mix-blend-mode: normal;
 }
 
 .hero-image-container::after {
@@ -247,7 +323,7 @@ html, body {
     pointer-events: none;
     border-radius: 0 0 30px 30px;
     mix-blend-mode: normal;
-    z-index: 2;
+    z-index: 3;
 }
 
 .hero-image-container::before {
@@ -259,11 +335,11 @@ html, body {
     height: 18%;
     background: linear-gradient(to bottom, transparent 0%, rgba(244, 245, 248, 0.8) 100%);
     pointer-events: none;
-    z-index: 3;
+    z-index: 4;
 }
 
 .hero-image-container:hover .hero-image {
-    transform: scale(1.01);
+    transform: scale(1.015);
 }
 
 /* Responsive image sizing */
@@ -276,7 +352,7 @@ html, body {
 @media (max-width: 640px) {
     .hero-image-container {
         max-width: 280px;
-        box-shadow: 0 18px 40px rgba(60, 62, 65, 0.14);
+        box-shadow: 0 18px 40px rgba(139, 42, 79, 0.1);
     }
 }
 
@@ -287,10 +363,15 @@ html, body {
 
 /* Typing Effect */
 .typing-effect {
+    display: inline-block;
+    white-space: nowrap;
     border-right: 2px solid;
     animation: blink-caret 1s step-end infinite;
 }
 
+.typing-effect .txt {
+    display: inline-block;
+}
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: currentColor; }
