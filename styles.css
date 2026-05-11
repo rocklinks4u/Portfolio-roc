@@ -1,5 +1,285 @@
 /* Custom Styles for Rocklinks Portfolio */
 
+/* Font Families */
+:root {
+    --font-poppins: 'Poppins', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+    --color-primary: #8B2A4F;
+    --color-background: #F4F5F8;
+    --color-text-main: #3C3E41;
+    --color-text-secondary: #6C757D;
+}
+
+/* Apply fonts globally */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins);
+}
+
+body, p, a, span {
+    font-family: var(--font-inter);
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: var(--color-background);
+}
+
+#hero {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+
+/* ===== HERO SECTION ANIMATIONS ===== */
+
+/* Fade-in animation for text */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in animation for image */
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Subtle float animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Hero button animations */
+@keyframes buttonPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 1, 79, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(255, 1, 79, 0);
+    }
+}
+
+/* ===== HERO BUTTON STYLES ===== */
+
+.hero-btn-primary {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-primary) !important;
+    color: white !important;
+    border: none;
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.hero-btn-primary:hover {
+    background-color: #7E2749 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(139, 42, 79, 0.3) !important;
+}
+
+.hero-btn-primary:hover::before {
+    left: 100%;
+}
+
+.hero-btn-primary:active {
+    transform: translateY(0);
+}
+
+.hero-btn-primary svg {
+    transition: transform 0.3s ease;
+}
+
+.hero-btn-primary:hover svg {
+    transform: translateX(3px);
+}
+
+/* Secondary button (Contact Me) */
+.hero-btn-secondary {
+    position: relative;
+    overflow: hidden;
+    background-color: white !important;
+    border-color: var(--color-primary) !important;
+    border-width: 2px;
+    color: var(--color-primary) !important;
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero-btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary);
+    z-index: -1;
+    transition: left 0.3s;
+}
+
+.hero-btn-secondary:hover {
+    color: white !important;
+    border-color: var(--color-primary) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(255, 1, 79, 0.25) !important;
+}
+
+.hero-btn-secondary:hover::before {
+    left: 0;
+}
+
+.hero-btn-secondary:active {
+    transform: translateY(0);
+}
+
+.hero-btn-secondary svg {
+    transition: transform 0.3s ease;
+}
+
+.hero-btn-secondary:hover svg {
+    transform: translateX(3px);
+}
+
+/* ===== RESPONSIVE BUTTON SIZING ===== */
+
+@media (max-width: 640px) {
+    .hero-btn-primary,
+    .hero-btn-secondary {
+        width: 100%;
+        padding: 0.875rem 1.5rem !important;
+    }
+}
+
+/* ===== HERO IMAGE STYLING ===== */
+
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 24px 60px rgba(60, 62, 65, 0.16);
+    background: transparent;
+}
+
+.hero-image-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 70px rgba(60, 62, 65, 0.2);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+    transition: transform 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    background: linear-gradient(
+        to bottom,
+        rgba(244, 245, 248, 0) 0%,
+        rgba(244, 245, 248, 0.16) 25%,
+        rgba(244, 245, 248, 0.42) 50%,
+        rgba(244, 245, 248, 0.75) 75%,
+        rgba(244, 245, 248, 1) 100%
+    );
+    pointer-events: none;
+    border-radius: 0 0 30px 30px;
+    mix-blend-mode: normal;
+    z-index: 2;
+}
+
+.hero-image-container::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 18%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(244, 245, 248, 0.8) 100%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.hero-image-container:hover .hero-image {
+    transform: scale(1.01);
+}
+
+/* Responsive image sizing */
+@media (max-width: 768px) {
+    .hero-image-container {
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-image-container {
+        max-width: 280px;
+        box-shadow: 0 18px 40px rgba(60, 62, 65, 0.14);
+    }
+}
+
 /* Radial Gradient */
 .bg-gradient-radial {
     background: radial-gradient(circle at center, var(--tw-gradient-stops));
@@ -97,7 +377,23 @@ html {
     transition: all 0.3s ease;
 }
 
-/* Back to Top Button */
+/* ===== ACCESSIBILITY & PERFORMANCE ===== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: none; }
+        50% { transform: none; }
+    }
+}
 #back-to-top.show {
     opacity: 1;
 }

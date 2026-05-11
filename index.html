@@ -7,6 +7,10 @@
     <meta name="description" content="Portfolio of Rocklinks, a web developer, mobile app developer, system designer, and graphic designer.">
     <meta name="keywords" content="Rocklinks, portfolio, web developer, mobile app developer, system designer, graphic designer">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
@@ -50,117 +54,61 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-radial from-blue-800/50 to-transparent"></div>
+    <section id="hero" class="min-h-screen flex items-center relative overflow-hidden" style="background-color: #F4F5F8;">
+        <!-- Subtle Background Shapes -->
+        <div class="absolute top-20 left-10 w-32 h-32 rounded-full opacity-5" style="background-color: #8B2A4F;"></div>
+        <div class="absolute bottom-32 right-12 w-40 h-40 rounded-full opacity-5" style="background-color: #8B2A4F;"></div>
+        <div class="absolute top-1/3 right-1/4 w-20 h-20 rounded-full opacity-5" style="background-color: #8B2A4F;"></div>
+        
         <div class="container mx-auto px-4 relative z-10">
-            <div class="grid md:grid-cols-2 gap-12 items-center min-h-screen">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center min-h-screen">
                 <!-- Text Content -->
-                <div data-aos="fade-right">
-                    <div class="mb-8">
-                        <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">
-                            Hi, I'm <span class="text-blue-400">Rocklinks</span>
+                <div data-aos="fade-up">
+                    <div class="mb-12" style="animation: fadeInText 0.8s ease-out;">
+                        <!-- Subtitle -->
+                        <p class="text-sm md:text-base font-medium mb-4 uppercase tracking-wider" style="color: #000; letter-spacing: 2px;">
+                            Welcome to my space
+                        </p>
+                        
+                        <!-- Main Heading -->
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight" style="color: #3C3E41; font-family: 'Poppins', sans-serif;">
+                            Hi, I'm <span style="color: #8B2A4F;">Elisha</span>
                         </h1>
-                        <h2 class="text-xl md:text-2xl text-white mb-6 typing-effect">
-                            Web Developer | Mobile App Developer | System Designer | Graphic Designer
+                        
+                        <!-- Subheading -->
+                        <h2 class="text-2xl md:text-3xl font-semibold mb-6" style="color: #3C3E41; font-family: 'Poppins', sans-serif;">
+                            Frontend Developer & Creative Technologist
                         </h2>
-                        <p class="text-lg text-white max-w-2xl mb-8">
-                            Passionate about creating innovative digital solutions that bridge technology and user experience. Specializing in web development, mobile apps, management systems, and creative design.
+                        
+                        <!-- Description -->
+                        <p class="text-base md:text-lg max-w-2xl mb-8 leading-relaxed" style="color: #6C757D; font-family: 'Inter', sans-serif;">
+                            I create modern, responsive, and user-focused digital experiences that combine clean design, smart functionality, and real-world impact.
                         </p>
                     </div>
-                    <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="200">
-                        <a href="#projects" class="bg-white hover:bg-gray-100 text-black px-8 py-3 rounded-full font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl">
-                            View Projects
+                    
+                    <!-- Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 md:gap-6" data-aos="fade-up" data-aos-delay="300">
+                        <!-- View My Projects Button -->
+                        <a href="#projects" class="hero-btn-primary inline-flex items-center justify-center px-8 py-4 font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl" style="background-color: #8B2A4F; color: white; font-family: 'Poppins', sans-serif;">
+                            View My Projects
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
                         </a>
-                        <a href="#contact" class="bg-white hover:bg-gray-100 text-black border-2 border-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+                        
+                        <!-- Contact Me Button -->
+                        <a href="#contact" class="hero-btn-secondary inline-flex items-center justify-center px-8 py-4 font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl border-2" style="border-color: #8B2A4F; color: #8B2A4F; background-color: white; font-family: 'Poppins', sans-serif;">
                             Contact Me
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         </a>
                     </div>
                 </div>
                 <!-- Image Content -->
-                <div data-aos="fade-left" class="flex justify-center">
-                    <svg viewBox="0 0 420 280" class="w-full max-w-md h-auto" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Table -->
-                        <rect x="20" y="220" width="380" height="30" fill="#734b26" rx="8"/>
-                        <rect x="20" y="210" width="380" height="14" fill="#8d5a2f" rx="7"/>
-                        <rect x="30" y="200" width="360" height="20" fill="#b89770" rx="8"/>
-
-                        <!-- Laptop Base -->
-                        <rect x="100" y="140" width="220" height="18" rx="6" fill="#2d3436"/>
-                        <path d="M110 140 h200 a4 4 0 0 1 4 4 v6 a4 4 0 0 1 -4 4 h-200 a4 4 0 0 1 -4 -4 v-6 a4 4 0 0 1 4 -4 z" fill="#1f2a32"/>
-                        <rect x="120" y="160" width="180" height="8" rx="4" fill="#2d3436"/>
-
-                        <!-- Laptop Screen -->
-                        <path d="M110 100 h200 a8 8 0 0 1 8 8 v68 a8 8 0 0 1 -8 8 h-200 a8 8 0 0 1 -8 -8 v-68 a8 8 0 0 1 8 -8 z" fill="#232f34"/>
-                        <rect x="118" y="108" width="194" height="60" rx="6" fill="#0f172a"/>
-                        <rect x="118" y="108" width="194" height="60" rx="6" fill="url(#screenGradient)"/>
-
-                        <!-- Screen bezel and camera -->
-                        <rect x="192" y="104" width="36" height="4" rx="2" fill="#3b4750"/>
-                        <circle cx="230" cy="110" r="1.5" fill="#9ca3af"/>
-
-                        <!-- Keyboard Deck -->
-                        <rect x="118" y="172" width="194" height="20" rx="4" fill="#303841"/>
-                        <rect x="150" y="178" width="120" height="8" rx="3" fill="#1f2937"/>
-                        <rect x="160" y="186" width="100" height="4" rx="2" fill="#39434c"/>
-                        <ellipse cx="210" cy="192" rx="26" ry="6" fill="#2a3238" opacity="0.7"/>
-
-                        <!-- Trackpad -->
-                        <rect x="185" y="180" width="50" height="30" rx="6" fill="#374151" opacity="0.9"/>
-                        <rect x="187" y="182" width="46" height="26" rx="5" fill="#4b5563" opacity="0.35"/>
-
-                        <!-- Keyboard Keys -->
-                        <g fill="#4b5563">
-                            <rect x="126" y="170" width="14" height="4" rx="2"/>
-                            <rect x="144" y="170" width="14" height="4" rx="2"/>
-                            <rect x="162" y="170" width="14" height="4" rx="2"/>
-                            <rect x="180" y="170" width="14" height="4" rx="2"/>
-                            <rect x="198" y="170" width="14" height="4" rx="2"/>
-                            <rect x="216" y="170" width="14" height="4" rx="2"/>
-                            <rect x="234" y="170" width="14" height="4" rx="2"/>
-                            <rect x="252" y="170" width="14" height="4" rx="2"/>
-                            <rect x="270" y="170" width="14" height="4" rx="2"/>
-
-                            <rect x="126" y="178" width="14" height="4" rx="2"/>
-                            <rect x="144" y="178" width="14" height="4" rx="2"/>
-                            <rect x="162" y="178" width="14" height="4" rx="2"/>
-                            <rect x="180" y="178" width="14" height="4" rx="2"/>
-                            <rect x="198" y="178" width="14" height="4" rx="2"/>
-                            <rect x="216" y="178" width="14" height="4" rx="2"/>
-                            <rect x="234" y="178" width="14" height="4" rx="2"/>
-                            <rect x="252" y="178" width="14" height="4" rx="2"/>
-                        </g>
-
-                        <!-- Mouse -->
-                        <g>
-                            <ellipse cx="310" cy="190" rx="16" ry="10" fill="#4b5563"/>
-                            <ellipse cx="310" cy="186" rx="10" ry="6" fill="#1f2937"/>
-                            <path d="M310 180 l0 10" stroke="#9ca3af" stroke-width="1" stroke-linecap="round"/>
-                            <ellipse cx="310" cy="200" rx="24" ry="12" fill="#d1d5db" opacity="0.4"/>
-                        </g>
-
-                        <!-- Screen content blocks -->
-                        <rect x="130" y="118" width="40" height="6" fill="#60a5fa" rx="3"/>
-                        <rect x="130" y="132" width="90" height="6" fill="#93c5fd" rx="3"/>
-                        <rect x="130" y="146" width="70" height="6" fill="#bfdbfe" rx="3"/>
-                        <rect x="130" y="160" width="60" height="6" fill="#60a5fa" rx="3"/>
-                        <rect x="210" y="132" width="64" height="6" fill="#93c5fd" rx="3"/>
-                        <rect x="210" y="146" width="86" height="6" fill="#c7d2fe" rx="3"/>
-                        <rect x="210" y="160" width="52" height="6" fill="#60a5fa" rx="3"/>
-
-                        <defs>
-                            <linearGradient id="screenGradient" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#0f172a"/>
-                                <stop offset="100%" stop-color="#111827"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                <div data-aos="fade-up" class="flex justify-center" style="animation: fadeInImage 1s ease-out;">
+                    <div class="hero-image-container">
+                        <img src="images/Elisha-image.png" alt="Elisha - Frontend Developer & Creative Technologist" class="hero-image">
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Animated Background Shapes -->
-        <div class="absolute top-20 left-10 w-20 h-20 bg-blue-800 rounded-full opacity-30 animate-bounce"></div>
-        <div class="absolute bottom-20 right-10 w-16 h-16 bg-purple-800 rounded-full opacity-30 animate-pulse"></div>
-        <div class="absolute top-1/2 left-1/4 w-12 h-12 bg-indigo-800 rounded-full opacity-30 animate-ping"></div>
     </section>
 
     <!-- About Me Section -->
