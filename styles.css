@@ -598,45 +598,52 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+  gap: 40px;
+  flex-wrap: wrap; /* 🔥 prevents overlap */
 }
 
-/* LEFT SIDE (text + buttons) */
+/* TEXT + BUTTON AREA */
 .hero-text {
   flex: 1;
-  min-width: 280px;
+  min-width: 300px;
+  z-index: 2;
 }
 
-/* RIGHT SIDE (image) */
+/* IMAGE AREA */
 .hero-image {
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-width: 250px;
 }
 
 .hero-image img {
-  max-width: 280px;
   width: 100%;
+  max-width: 260px; /* 🔥 limits image so it cannot invade buttons */
   height: auto;
+  display: block;
   border-radius: 10px;
 }
 
-/* MOBILE FIX */
+/* BUTTON SAFETY */
+.hero-buttons {
+  position: relative;
+  z-index: 2;
+}
+
+/* MOBILE */
 @media screen and (max-width: 768px) {
   .hero {
     flex-direction: column;
     text-align: center;
   }
 
-  .hero-text, .hero-image {
-    width: 100%;
-  }
-
   .hero-image {
     margin-top: 20px;
   }
 }
-}
+
 
   /* TRIANGLE OVERLAY */
   .triangle-overlay {
