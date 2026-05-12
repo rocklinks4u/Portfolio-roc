@@ -627,9 +627,14 @@ html {
 }
 
 /* BUTTON SAFETY */
+/* ===== HERO BUTTON CONTAINER ===== */
 .hero-buttons {
   position: relative;
   z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 2rem;
 }
 
 /* MOBILE */
@@ -644,7 +649,7 @@ html {
   }
 }
 
-
+git
   /* TRIANGLE OVERLAY */
   .triangle-overlay {
     width: 120px;
